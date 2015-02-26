@@ -55,14 +55,20 @@ public class Merges {
 
 	
 	while ( i < stuff.size() && i2 < stuff2.size() ){
+	    //   while there is still more elements in the stuffs (indices
+	    // i and i2)
 	    if (stuff.get(i) <= stuff2.get(i2)){
 		newData.add( stuff.get(i) );
 		i++;
 	    }
+	    // if i element is less than i2 element, then add i first
+	    // repeat
 	    else if (stuff2.get(i2) < stuff.get(i)){
 		newData.add( stuff2.get(i2) );
 		i2++;
 	    }
+	    // conversely, repeat
+	    // like cards, pile on top of each other in order
 	}
 	while ( i < stuff.size() ){
 	    newData.add( stuff.get(i) );
@@ -72,6 +78,7 @@ public class Merges {
 	    newData.add( stuff2.get(i2) );
 	    i2++;
 	}
+	// add rest, other deck
 	return newData;
     }
     
