@@ -20,10 +20,40 @@ public class Merges {
     }
 
     public ArrayList<Integer> merge(ArrayList<Integer> stuff,
-				    ArrayList<Integer> stuff2){
+				    ArrayList<Integer> stuff2) {
+	/*	ArrayList<Integer> result = new ArrayList<Integer>();
+	
+	ArrayList<Integer> Ap, Bp;
+	
+	if (parte.size() > 0 && parte2.size() > 0) {
+	    if (parte.get(0) > parte2.get(0) ) {
+		Bp = parte;
+		Ap = parte2;
+		
+	    }
+	    else {
+		Ap = parte;
+		Bp = parte2;
+	    }
+
+	    for (int i = 0 ; i < Ap.size() ; i++) {
+		result.add(Ap.get(i));
+	    }
+	    for (int i = 0 ; i < Bp.size() ; i ++ ) {
+		result.add(Bp.get(i));
+	    }
+	}
+	return result;
+	
+    } */
+		
+	
+	
 	ArrayList<Integer> newData = new ArrayList<Integer>();
 	int i = 0;
 	int i2 = 0;
+
+	
 	while ( i < stuff.size() && i2 < stuff2.size() ){
 	    if (stuff.get(i) <= stuff2.get(i2)){
 		newData.add( stuff.get(i) );
@@ -44,9 +74,11 @@ public class Merges {
 	}
 	return newData;
     }
+    
 
 
-    public ArrayList<Integer> split(ArrayList<Integer> stuff, int start, int stop){
+    public ArrayList<Integer> split(ArrayList<Integer> stuff,
+				    int start, int stop){
 	ArrayList<Integer> A = new ArrayList<Integer>();
 	int i = start;
 	int j = stop;
@@ -57,14 +89,14 @@ public class Merges {
 	return A;
     }
 
-    public ArrayList<Integer> mergeSort(ArrayList<Integer> stuff){
+    public ArrayList<Integer> mergeSort(ArrayList<Integer> liste){
 	ArrayList<Integer> result = new ArrayList<Integer>();
-	if (stuff.size() <= 1){
-	    return stuff;
+	if (liste.size() <= 1){
+	    return liste;
 	}
 	else {
-	    ArrayList<Integer> A = split(stuff, 0, stuff.size()/2);
-	    ArrayList<Integer> B = split(stuff, stuff.size()/2, stuff.size() );
+	    ArrayList<Integer> A = split(liste, 0, liste.size()/2);
+	    ArrayList<Integer> B = split(liste, liste.size()/2, liste.size() );
 	    A = mergeSort(A);
 	    B = mergeSort(B);
 	    result = merge(A,B);
@@ -73,20 +105,20 @@ public class Merges {
     }
 
     public ArrayList<Integer> mergeSort(){
-	ArrayList<Integer> result = mergeSort( data );
-	data = result;
+	data = mergeSort( data );
 	return data;
     }
 
 
     public static void main(String[] args){
-	ArrayList<Integer> stuff = new ArrayList<Integer>();
+	ArrayList<Integer> list = new ArrayList<Integer>();
 	Random r = new Random();
 	for (int i = 0; i < 10; i++){
 	    int randomInt = r.nextInt(10);
-	    stuff.add(randomInt);
+	    list.add(randomInt);
 	}
-	Merges m = new Merges(stuff);
+	// random arraylist of ints
+	Merges m = new Merges(list);
 	System.out.println( m );
 	m.mergeSort();
 	System.out.println( m );
