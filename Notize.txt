@@ -1,0 +1,28 @@
+Das ist meine Notizen fur Informatik.
+Mar 4, 2015.
+
+linear search: n
+
+Binary Search: lg of n
+
+Merge Sort: log based 2 of n
+Merge sort splits half and half.
+each split loops the array -> n
+the set of each levels merge ->
+
+speed of merge sort: 2n log n;
+
+
+Big O Notation --
+- function f(n) is said to be O(g(n))
+  	   (Order g(n) ) or (Big O g(n))
+- if there exists some constant k such that k(g(n)) > f(n) over the long term
+>> C(n^2);
+>> (n^ 2 - n ) / 2
+
+
+// O Gott, Hilfe! Ich verstehe nicht das.
+// Ich will jetzt schlafen, aber bin ich in Klasse.
+// Hilfe, hilfe, Herr Odin. Herr Jesu. Herr Gott im Himmel! Lasst mich nicht in
+   // der Holle mehr sein.
+// Ich will Deutsch lernen.
