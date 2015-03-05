@@ -1,0 +1,45 @@
+5mar2015
+
+PROGRESSIVELY FIND SMALLEST
+O(n^2)
+Find the kth smallest:
+     - find the smallest, delete it (continue until kth time -- that is kth
+     smallest)
+>> copy of list c as temp
+k is index(?)
+while (k > 1) {
+      delete smallest element in list;
+      }
+      return min(tmp)
+
+
+
+SORT THEN INDEX
+Sort the list, take kth index:
+>>     tmp = msort(list c);
+     return tmp[k];
+>  nlgn+k
+(nlgn)
+
+
+Should I sort my list before I deal with it? If there is much to be done
+to the sorted list, then perhaps yes -- but if I have a simple, single instance
+of a task that I need the sorted list, it may not be necessary.
+
+
+THROW INTO PILES
+//Es ist linear.
+given an unsorted list of ints,
+find a certain element that is kth smallest
+go through the list in a for loop, judging each element by this:
+   if it is smaller than
+1. - choose a pivot value (for now, first element)
+2. - partition the list
+   -> using for loop, go through list so all values less than pivot is in
+   one pile, and all values more than pivot is the other
+3. - if the pivot is the kth smallest (there are k-1 smaller values), then
+   return the pivot,
+   but if pivot is not it, then we recursively 'throw' the smaller or bigger
+   unsorted halves of the list (depending on whether the pivot is too early
+   or too late to be the kth term) and in turn partition the halves using new
+   pivots until we find the pivot as the kth smallest
