@@ -1,0 +1,54 @@
+MergeSort -- how it works
+
+some arraylists declared
+
+MSORT (arraylist A) {
+      if A is less than 2 in length, then return a;
+
+      otherwise, divide A into halves B and C:
+      		 using for loop up to a.size()/2, copy A elements to B
+		 using for loop starting from a.size()/2 to the end of A, copy
+	 A elements over to C
+
+      now you have halves B and C:
+      	  arraylist EIN = MSORT(B);
+	  arraylist ZWEI = MSORT(C);
+	//recursively half the halves until you reach base case above;
+
+      now, lastly, coming back from the base case (the parts are now diced
+      into arraylists of one element each):
+	  return MERGE(EIN, ZWEI);
+
+}
+
+MERGE (arraylists A and B) {
+      an arraylist to be returned is declared
+      int iA is 0;
+      int iB is 0;
+  // these are indexes of A and B arraylists respectively
+
+  while iA < A.size() and iB < B.size(), that is, we haven't run to the ends
+  of either arraylist A or B yet:
+     compare the two elements in the index in question (comparing A.get(iA)
+     and B.get(iB)) and add the smaller of the two
+     for example, if the A element is smaller, add A, then iA++; 
+     on the other hand, if the B element is smaller, add B to resultlist,
+     and then iB++
+  //   this loops until we reach the end of either A or B, always adding
+     the smallest element first -- this sorts the elements of both parts
+     into one sorted list
+
+  while iB is still less than B size:
+  	add B, and iB++
+
+  while iA is still less than A size:
+  	add A, and iA++
+  // these add any remaining elements on the bigger list
+
+  return the merged resultlist
+}
+
+
+at last, the list is sorted.
+
+FIN.
