@@ -43,3 +43,49 @@ go through the list in a for loop, judging each element by this:
    unsorted halves of the list (depending on whether the pivot is too early
    or too late to be the kth term) and in turn partition the halves using new
    pivots until we find the pivot as the kth smallest
+
+====================================================================
+
+06mar2015
+
+there is
+an array with 20 elements, from [0] to [19].
+3, 8, 12, 4, 5, 6, 16, 2, 9, 10,...
+
+A(rray), k, L, H
+select(Array,find 3rd,O low,9 high):
+
+looking for kth smallest element in the range of [L] to [k] in list A
+
+first time
+L=0;
+H=A.length-1
+
+1.- select pivot value
+2.- swap pivot value with the value in array[H]
+3.- Li = L; Hi = H-1
+    low index is low and high index is high
+4.- while Li<Hi, a loop:
+{
+    if A[Li} < p
+       Li++
+    else
+       swap A[Li] and A[Hi]
+       Hi--;
+       }
+    when Li and Hi meet, this for loop finishes...
+    
+    swap A[H] (pivot) with first right side element
+    if pivot @ k, we're done
+    else,
+	either select(A,k,l,pivotindex-1)
+	       or
+	 select(A,k,pivotindex,H index)
+
+
+// from low, going over the list, check each element if it is greater than
+   the pivot. if it is, then Li++ (simult both a lower-than-pivot counter and
+   an index).
+   if the element is not greater than pivot, than switch it with high index.
+   Hi-- ; high index moves left, leaving the greater-than-pivot element on
+   the right side pile
