@@ -2,16 +2,16 @@ import java.util.*;
 import java.io.*;
 
 
-public class Qselect{
+public class Qsort{
 
     private int[] a,b;
     Random rnd = new Random();
     
-    public Qselect(){
+    public Qsort(){
 	this(20);
     }
     // by default, array size 20
-    public Qselect(int n){
+    public Qsort(int n){
 	Random r = new Random();
 	a = new int[n];
 	for (int i = 0; i < a.length; i++) {
@@ -25,12 +25,12 @@ public class Qselect{
 	return Arrays.toString(a);
     }
     //toString
+
+
     
-    public int partition(int[] a, int l, int r) {
+    public void partition(int[] a, int l, int r) {
 	int tmp;
-
 	int pivotIndex=l;
-
 	int pivot = a[pivotIndex];
 	// first element in list is made pivot
 	tmp = a[r];
@@ -71,11 +71,17 @@ public class Qselect{
 	}
 
 
-	return (wall+rwall)/2;
+	//	return (wall+rwall)/2;
 
     }
-    public int[] qsort(int[] a, int l, int h){
+    public void qsort(int[] a, int l, int h){
 	int pi,pval;
+
+	
+	if (l == h) {
+	    return a;
+	}
+    	
 	pi = partition(a,l,h);
 	// returns index of the pivot value after running the entire list
 	// through partition
@@ -93,22 +99,19 @@ public class Qselect{
 
 	qsort(a,pi+1,h);
 	qsort(a,l,pi-1);
+	return;
+	
+    }
 
- }
+    
     // evaluating a smaller and smaller range
 
-    public int select(int k){
-	b = Arrays.copyOf(a,a.length);
-	return qselect(b,k,0,b.length-1);
-    }
+    //   public int select(int k){
+    //	b = Arrays.copyOf(a,a.length);
+    //	return qselect(b,k,0,b.length-1);
+    //    }
     public static void main(String[] args) {
-	Qselect q = new Qselect();
-	System.out.println(q);
-	for (int i=0;i<5;i++) {
-	    System.out.print(q.select(i)+" ");
-	}
-	System.out.println();
-	Arrays.sort(q.a);
-	System.out.println(q);
+	Qsort q = new Qsort();
+
     }
 }
