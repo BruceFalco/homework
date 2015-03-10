@@ -28,7 +28,7 @@ public class Qsort{
 
 
     
-    public void partition(int[] a, int l, int r) {
+    public int partition(int[] a, int l, int r) {
 	int tmp;
 	int pivotIndex=l;
 	int pivot = a[pivotIndex];
@@ -37,10 +37,6 @@ public class Qsort{
 
 	a[r] = a[pivotIndex];
 	a[pivotIndex]=tmp;
-
-	if (l == r) {
-	    return;
-	}
 
 	// pivot,...,...,last --> last,...,...,pivot
 	
@@ -75,17 +71,16 @@ public class Qsort{
 	}
 
 
-	//	return (wall+rwall)/2;
+	return (wall+rwall)/2;
 
     }
-    public void qsort(int[] a, int l, int h){
+    public int[] qsort(int[] a, int l, int h){
 	int pi,pval;
 
-	
 	if (l == h) {
 	    return a;
 	}
-    	
+	
 	pi = partition(a,l,h);
 	// returns index of the pivot value after running the entire list
 	// through partition
@@ -103,11 +98,8 @@ public class Qsort{
 
 	qsort(a,pi+1,h);
 	qsort(a,l,pi-1);
-	return;
-	
-    }
 
-    
+ }
     // evaluating a smaller and smaller range
 
     //   public int select(int k){
