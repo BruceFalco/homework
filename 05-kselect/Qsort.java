@@ -74,11 +74,11 @@ public class Qsort{
 	return (wall+rwall)/2;
 
     }
-    public int[] qsort(int[] a, int l, int h){
+    public void qsort(int[] a, int l, int h){
 	int pi,pval;
 
 	if (l == h) {
-	    return a;
+	    return;
 	}
 	
 	pi = partition(a,l,h);
@@ -96,18 +96,26 @@ public class Qsort{
 	    return qselect(a,k,l,pi-1);
 	*/   
 
+	// PROBLEM HERE
+	if (h < a.length) {
 	qsort(a,pi+1,h);
+	}
+	if (l > 0) {
 	qsort(a,l,pi-1);
-
- }
+	}
+    }
     // evaluating a smaller and smaller range
 
-    //   public int select(int k){
-    //	b = Arrays.copyOf(a,a.length);
-    //	return qselect(b,k,0,b.length-1);
-    //    }
+  
+
+    public void sort() {
+	qsort(a,0,a.length-1);
+    }
+
     public static void main(String[] args) {
 	Qsort q = new Qsort();
-
+	System.out.println(q);
+	q.sort();
+	System.out.println(q);
     }
 }
