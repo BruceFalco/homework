@@ -1,6 +1,7 @@
 LINK LIST
 -> each element in the list only knows one thing: the identity of the element
 after it
+-> all these elements form a list through the identity of whoever is after them
 
 Alice -> Joseph -> Mike -> Mariya  -> Dillon
 
