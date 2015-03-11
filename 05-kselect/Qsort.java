@@ -75,34 +75,23 @@ public class Qsort{
 
     }
     public void qsort(int[] a, int l, int h){
-	int pi,pval;
+	int pi;
 
-	if (l == h) {
-	    return;
-	}
+	if (l<h) {
 	
 	pi = partition(a,l,h);
-	// returns index of the pivot value after running the entire list
-	// through partition
-	pval = a[pi];
-	// pval is pivot value essentially; calls value of index of pivot value
-
-	//if (k==pi)
-	/*
-	    return pval;
-	    //else if (k > pi)
-	    return qselect(a,k,pi+1,h);
-	    //else
-	    return qselect(a,k,l,pi-1);
-	*/   
-
-	// PROBLEM HERE
+	qsort(a,l,pi-1);
+	qsort(a,pi+1,h);
+	}
+	
+	/*	// PROBLEM HERE
 	if (h < a.length) {
 	qsort(a,pi+1,h);
 	}
 	if (l > 0) {
 	qsort(a,l,pi-1);
-	}
+	} */
+	
     }
     // evaluating a smaller and smaller range
 
