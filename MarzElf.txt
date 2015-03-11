@@ -1,0 +1,18 @@
+LINK LIST
+-> each element in the list only knows one thing: the identity of the element
+after it
+
+Alice -> Joseph -> Mike -> Mariya  -> Dillon
+
+i.e. Alice only knows Joseph is after her; Joseph only knows that Mike is after
+him
+
+to redirect or add an element in between a list, you do the following:
+e.g. to add David between Mike and Mariya
+- tell David that Mariya is after him; this enters David into the list/tree
+--> you can tell two people that one person is after each of them
+- then tell Mike that David is after HIM; redirected successfully
+otherwise, if we just tell Mike that David is after him and to forget Mariya's
+identity, mariya is lost from list forever
+
+Alice -> Joseph -> Mike -> David ==>  Mariya  -> Dillon
