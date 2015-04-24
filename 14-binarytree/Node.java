@@ -3,8 +3,6 @@ public class Node {
     private Node left, right;
 
     public Node() {
-	data = null;
-	left,right= null;
     }
 
     public Node(int i) {
@@ -21,6 +19,16 @@ public class Node {
     
     public void setRight(Node right) {
 	right = right;
+    }
+
+    public Node getLeft() {
+	return left;
+    }
+    public Node getRight() {
+	return right;
+    }
+    public int getData() {
+	return data;
     }
 
 }
