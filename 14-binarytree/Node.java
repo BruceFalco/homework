@@ -31,4 +31,8 @@ public class Node {
 	return data;
     }
 
+    public String toString() {
+	return data + "";
+    }
+
 }
