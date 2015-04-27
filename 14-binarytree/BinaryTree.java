@@ -1,5 +1,5 @@
 public class BinaryTree {
-    private Node root;
+    Node root;
 
     public BinaryTree() {
 	
@@ -16,23 +16,50 @@ public class BinaryTree {
 	return root;
     }
 
-    public Node search(Node T, int i) {
-	Node T2 = T;
-	while (T != null) {
-	    T2 = T;
-	    int c = T.getData() - i ;
-	    if (c > 0) {
-		T = T.getRight();
-	    }
-	    else if (c < 0) {
-		T = T.getLeft();
-	    }
-	    else {
-		return T;
-	    }
+    public Node search(Node t, int i) {
+	if (t==null || t.getData()==i){
+	    return t;
 	}
-	return T2;
+	else if (i < t.getData() ) {
+	    return search(t.getLeft(),i);
+	}
+	else {
+	    return search(t.getRight(),i);
+	}
     }
+
+    
+    public String search(int i) {
+	Node n = search(r,i);
+	if (n == null) {
+	    return "NOT FOUND";
+	}
+	else {
+	    return n.toString();
+	}
+    }
+
+    public void insert(int i) {
+	Node n = new Node(i);
+	Node t2 = null;
+	Node t=root;
+	// piggyback t2 and leaf pointer t
+	if (root == null) {
+	    root=n;
+	    //if root is empty, set root;
+	    return;
+	}
+	while (t!=null) {
+	    t2 = t;
+	    // while the leaf pointer is not null/there is a root/
+	    // t is pointingto SOMETHING, a leaf, etc.
+	    // set piggyback t2 to t, since t is substantial
+
+	    if (t.getData() == i) {
+		return;
+	    }
+
+	    // finish insert
 
     public void insert(Node t, int i) {
 	Node base;

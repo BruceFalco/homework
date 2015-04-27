@@ -11,6 +11,8 @@ public class Driver {
 	tr.insert(r,3);
 	tr.insert(r,2);
 	tr.insert(r,19);
+	System.out.println(r.getLeft());
+	//	System.out.println(r.getRight().getLeft());
     }
 
 }
