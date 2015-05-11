@@ -1,0 +1,24 @@
+may 11, 2015
+
+design algorithm to determine the number of nodes in a binary tree
+
+base call return 0 if null
+
+recursive reduction
+	  return 1+ #nodes (left)
+	  	 1+ nodes (right)
+
+public int nodecount(N) ret;
+       if (r == null)
+       	  return 0;
+	  
+	else {
+	     return +nodeCount(left)
+	     return +nodeCount(right)
+}
+
+
+1.) max value from a tree
+2.) height
+4.) longest leaf to leaf path
+3.) split dupes

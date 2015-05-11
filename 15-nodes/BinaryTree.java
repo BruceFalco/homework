@@ -1,0 +1,96 @@
+public class BinaryTree {
+    Node root;
+
+    public BinaryTree() {
+	
+    }
+
+    public BinaryTree(Node root) {
+	this.root = root;
+    }
+
+    public void setRoot(Node root) {
+	root = root;
+    }
+    public Node getRoot(){
+	return root;
+    }
+
+    public Node search(Node t, int i) {
+	if (t==null || t.getData()==i){
+	    return t;
+	}
+	else if (i < t.getData() ) {
+	    return search(t.getLeft(),i);
+	}
+	else {
+	    return search(t.getRight(),i);
+	}
+    }
+    
+    
+    public String search(int i) {
+	Node n = search(r,i);
+	if (n == null) {
+	    return "NOT FOUND";
+	}
+	else {
+	    return n.toString();
+	}
+    }
+
+    public void insert(int i) {
+	Node n = new Node(i);
+	Node t2 = null;
+	Node t=root;
+	// piggyback t2 and leaf pointer t
+	if (root == null) {
+	    root=n;
+	    //if root is empty, set root;
+	    return;
+	}
+	while (t!=null) {
+	    t2 = t;
+	    // while the leaf pointer is not null/there is a root/
+	    // t is pointingto SOMETHING, a leaf, etc.
+	    // set piggyback t2 to t, since t is substantial
+
+	    if (t.getData() == i) {
+		return;
+	    }
+	}
+    }
+	    // finish insert
+
+    public void insert(Node t, int i) {
+	Node base;
+	// from which new leaf springs
+	if (root == null) {
+	    root = t;
+	}
+	base = search(t, i);
+	int c = base.getData() - i;
+	Node enter = new Node(i);
+	if (c > 0) {
+	    base.setRight(enter);
+	}
+	else if (c < 0) {
+	    base.setLeft(enter);
+	}
+	
+	
+	
+	// print it
+
+    }
+
+
+    public int maxValue(Node r) {
+	if (r.getRight() == null) {
+	    return r.getData;
+	}
+	else {
+	    maxValue(r.getRight());
+	}
+    }
+}
