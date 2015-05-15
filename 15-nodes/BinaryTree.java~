@@ -102,7 +102,7 @@ public class BinaryTree {
 	    return r.getData();
 	}
 	else {
-	    maxValue(r.getRight());
+	    return  maxValue(r.getRight());
 	}
     }
 }

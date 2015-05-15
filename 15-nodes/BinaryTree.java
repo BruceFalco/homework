@@ -1,3 +1,6 @@
+import java.io.*;
+import java.util.*;
+
 public class BinaryTree {
     Node root;
 
@@ -105,4 +108,25 @@ public class BinaryTree {
 	    return  maxValue(r.getRight());
 	}
     }
+
+    public int numNodes (Node r) {
+	if (r == null) {
+	    return 0;
+	}
+	else {
+	    return 1 + numNodes(r.getLeft()) + numNodes(r.getRight());
+	}
+    }
+
+    public int height(Node r) {
+	if (r == null) {
+	    return 0;
+	}
+	else {
+	    return 1 + Math.max(height(r.getLeft()), height(r.getRight()));
+	}
+    }
+
+  
+    
 }
