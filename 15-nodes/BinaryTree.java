@@ -30,7 +30,7 @@ public class BinaryTree {
     
     
     public String search(int i) {
-	Node n = search(r,i);
+	Node n = search(root,i);
 	if (n == null) {
 	    return "NOT FOUND";
 	}
@@ -58,6 +58,18 @@ public class BinaryTree {
 	    if (t.getData() == i) {
 		return;
 	    }
+	    else if (t.getData() > i) {
+		t = t.getLeft();
+	    }
+	    else {
+		t = t.getRight();
+	    }
+	}
+	if (i < t2.getData()) {
+	    t2.setLeft(n);
+	}
+	else {
+	    t2.setRight(n);
 	}
     }
 	    // finish insert
@@ -86,11 +98,11 @@ public class BinaryTree {
 
 
     public int maxValue(Node r) {
-	if (r.getRight() == null) {
-	    return r.getData;
+	if (root.getRight() == null) {
+	    return r.getData();
 	}
 	else {
-	    maxValue(r.getRight());
+	    return  maxValue(r.getRight());
 	}
     }
 }
