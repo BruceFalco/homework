@@ -1,0 +1,23 @@
+hashing
+hash tables
+
+we want to store all info Stuy Students in a data structure by index (array)
+
+you want to optimize for:
+1. fishing a student based on 4digit id
+2. adding a student by 4digit id
+3. changing a student (found by 4digit did)
+
+store by array -> 0(1) time
+A[Id - k]
+k  the ID range for the senior class (i.e. 1000)
+
+HASH HASHING TABLES
+we want to store things in a table by index (array)
+we have to take a unique id and convert it into a table index to store it
+hash functions (h(x)) is a mapping function
+it takes a piece of information and converts it into an index in our hash table
+ex. 0515 Numbers
+    h(x) = x % 10 000
+    convert to 4 digit index
+
